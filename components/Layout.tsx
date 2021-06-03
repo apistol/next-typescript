@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 type LayoutProps = {
     title?: string
@@ -11,8 +12,12 @@ const layoutStyle = {
 }
 const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => (
     <div style={layoutStyle}>
+        <Head>
+            <title>{title}</title>
+            <meta charSet="utf-8" />
+            <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        </Head>
         <header>
-            <p>{title}</p>
             <nav>
                 <Link href="/">
                     <a>Home</a>
